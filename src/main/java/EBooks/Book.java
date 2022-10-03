@@ -23,4 +23,16 @@ public class Book {
     public String getGenre() {
         return genre;
     }
+
+    public void setTitle(String bookTitle) {
+        this.title = bookTitle;
+    }
+
+    public void setAuthor(String bookAuthor) {
+        this.author = bookAuthor;
+    }
+
+    public void setGenre(String bookGenre) {
+        this.genre = bookGenre;
+    }
 }
