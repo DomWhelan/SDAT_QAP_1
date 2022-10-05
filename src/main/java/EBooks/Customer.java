@@ -4,7 +4,7 @@ public class Customer {
 
     private String userName;
     private String email;
-    private String creditNum;
+    private String creditNum = "";
     private Boolean subscriptionStatus;
     public static int customerCount = 0;
 
@@ -30,7 +30,29 @@ public class Customer {
         return email;
     }
 
+    public Boolean methodOfPayCheck(){
+        return !this.creditNum.equals("");
+    }
+
     public Boolean getSubscriptionStatus() {
         return subscriptionStatus;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void subscribe(String credNumber){
+        this.creditNum = credNumber;
+        this.subscriptionStatus = true;
+    }
+
+    public void unSubscribe(){
+        this.creditNum = "";
+        this.subscriptionStatus = false;
     }
 }
