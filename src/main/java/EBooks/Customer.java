@@ -30,7 +30,7 @@ public class Customer {
         return email;
     }
 
-    public Boolean methodOfPayCheck(){
+    public Boolean methodOfPayVerify(){
         return !this.creditNum.equals("");
     }
 

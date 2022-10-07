@@ -20,19 +20,19 @@ public class CustomerTest {
     public void testCustomerConstructor(){
 
         // default values
-
         String defUserName = "User";
         String defEmail = "";
-        // Default Credit Number should be Null
-        // Default Subscription Status should be False
+        // Default Credit Number will be Null, method will return false
+        // Default Subscription Status will be False
 
         Customer c1 = new Customer();
 
         Assertions.assertEquals(defUserName, c1.getUserName());
         Assertions.assertEquals(defEmail, c1.getEmail());
-        Assertions.assertFalse(c1.methodOfPayCheck());
+        Assertions.assertFalse(c1.methodOfPayVerify());
         Assertions.assertFalse(c1.getSubscriptionStatus());
 
+        // Second Constructor receiving 2 values
         Customer c2 = new Customer("Bo Bichette", "bluejays@mlb.com");
 
         Assertions.assertEquals("Bo Bichette", c2.getUserName());
@@ -62,12 +62,12 @@ public class CustomerTest {
 
         c4.subscribe("1234123412341234");
 
-        Assertions.assertTrue(c4.methodOfPayCheck());
+        Assertions.assertTrue(c4.methodOfPayVerify());
         Assertions.assertTrue(c4.getSubscriptionStatus());
 
         c4.unSubscribe();
 
-        Assertions.assertFalse(c4.methodOfPayCheck());
+        Assertions.assertFalse(c4.methodOfPayVerify());
         Assertions.assertFalse(c4.getSubscriptionStatus());
 
 
